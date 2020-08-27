@@ -1,0 +1,409 @@
+@import '~antd/dist/antd.css'
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap')
+
+body
+  margin 0
+  font-family -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+.App
+    font-family 'Rubik', sans-serif
+    background #ffffff
+    
+// layout
+.ant-layout
+    background transparent
+    .ant-layout-sider
+        flex 0 0 150px !important
+        max-width 150px !important
+        min-width 150px !important
+        width 150px !important
+        &.ant-layout-sider-collapsed
+            flex 0 0 50px !important
+            max-width 50px !important
+            min-width 50px !important
+            width 50px !important
+        .ant-layout-sider-trigger
+            width 48px !important
+        .ant-layout-sider-children
+            position fixed
+            .logo
+                font-family 'Rubik', sans-serif
+                font-size 18px
+                height 50px
+                color #ffffff
+                float left
+                background #333
+                padding 0 5px
+                width 50px
+                line-height 46px
+                margin-bottom 8px
+                display block
+                position relative
+            .ant-menu-inline-collapsed
+                width 50px
+                > .ant-menu-item
+                    padding 0 16px !important
+                    .anticon
+                        font-size 18px
+                    &:hover
+                        color #8e8e8e
+                    &.ant-tooltip-inner
+                        border-radius 0
+                        text-transform uppercase
+                        font-size 12px
+                        line-height 12px
+                        min-height 0
+                    &.ant-tooltip-arrow
+                        display none
+                .ant-menu-item-selected
+                    color #adadad
+                    background transparent
+    .ant-layout-header
+        height 50px
+        background transparent
+        padding 0
+        width 100%
+        position fixed
+        z-index 1
+        .ant-page-header
+            height 50px
+            line-height 50px
+            padding 0 0 0 26px
+            background rgba(0, 0, 0, 0.65)
+        .ant-page-header-heading-title
+            font-size 14px
+            text-transform uppercase
+            font-weight normal
+            color #ffffff
+    .ant-layout-content
+        display flex
+        flex-flow row wrap
+        justify-content space-evenly
+        background transparent
+        margin-top 64px
+        .card
+            width 250px
+            margin  16px 8px
+            text-align center
+            display flex
+            flex-flow column nowrap
+            border-radius 0
+            background transparent
+            position relative
+        .ant-card-cover
+            height 376px
+        .card:empty,
+        .card.failed
+            display none
+
+
+// item card
+.ant-card-meta-description p
+    margin-bottom 4px
+    &:last-child
+        margin-bottom 0
+.ant-card-cover img
+    border-radius  0
+    height 350px
+    object-fit cover
+    margin-bottom -1px
+    position absolute
+.ant-tag.premiere
+    color #8e8e8e
+    border-color #e8e8e8
+    background transparent
+    border-radius 0
+    border-left 0
+    border-right 0
+    text-transform uppercase
+    height 26px
+    line-height 24px
+    font-weight 500
+    position absolute
+    top 350px
+    display flex
+    justify-content space-around
+    &.series
+        font-weight 500
+    .anticon
+        font-size 8px
+        padding 8px 0
+        vertical-align baseline
+    &:hover
+        opacity initial
+
+.ant-card-body
+    padding 15px
+    .ant-btn.disabled,
+    .ant-btn[disabled]
+        color #bdbdbd
+        cursor default
+    .ant-btn:hover,
+    .ant-btn:focus,
+    .ant-btn:active,
+    .ant-btn.active
+        color #8e8e8e
+        border-color #bdbdbd
+    .ant-btn
+        &.card-button
+            border-radius 0
+            margin-top 15px
+            border-left 0
+            border-right 0
+            box-shadow none
+            height 40px
+            line-height 1.68
+            background-color transparent
+            color #7f7f7f
+            border-color #9f9f9f
+        &:after
+            display none
+        &:hover
+            color #666
+            border-color #666
+        &.disabled,
+        &[disabled]
+            color #bdbdbd
+            border-color #d8d8d8
+            cursor default
+
+.card .ant-badge
+    position absolute
+    right 1px
+    width: calc(100% - 2px)
+    .ant-badge-count
+        box-shadow: none
+        border-radius: 0
+        background rgba(119,119,119,0.88)
+        text-transform uppercase
+        font-weight 400
+        height 26px
+        line-height 26px
+
+.fade-out
+    opacity 0
+    transition opacity 2.25s ease-in-out 1.75s
+
+// setup
+.ant-modal-content
+    border-radius 0
+    background-clip unset
+    .ant-modal-header
+        border-radius 0
+    .ant-modal-title
+        text-align center
+        text-transform uppercase
+        font-size 18px
+    .ant-btn
+        color #adadad
+        border-color #bdbdbd
+        border-radius 0
+        &.disabled,
+        &[disabled],
+        &[disabled]:hover
+            color #adadad
+            border-color #f2f2f2
+            background transparent
+            cursor default
+        &:hover
+            color #adadad
+            border-color #bdbdbd
+        &:after
+            display none
+        &.next
+            color #333333
+            border-color #666666
+        &.input-btn
+            border-color #d9d9d9
+            color #adadad
+            width 100%
+    .ant-input
+        border-color #d9d9d9
+        border-radius 0
+        &:hover,
+        &:focus
+            border-color #d9d9d9
+            box-shadow none
+        &.input-btn
+            border-bottom 0
+    .ant-radio-group-large
+        width 100%
+        &.yesno .ant-radio-button-wrapper
+            width 50%
+        .ant-radio-button-wrapper
+            width 100%
+            text-align center
+            color #adadad
+            border-radius 0
+            &:hover
+                color #adadad
+                border-color #bdbdbd
+        .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled),
+        .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover,
+        .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child,
+        .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child:hover
+            color #333333
+            border-color #666666
+            box-shadow: -1px 0 0 0 #666666
+        .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):focus-within,
+        .ant-radio-button-wrapper:focus-within
+            outline: none
+    .ant-modal-footer
+        .paginext
+            display flex
+            justify-content space-between
+            padding 0.6rem 0
+        .ant-btn
+            text-transform uppercase
+            min-width 105px
+
+.steps-content
+    padding 1.2rem 0 0
+    min-height 180px
+    .ant-form-item-label > label
+        color #8e8e8e
+        
+.ant-steps      
+    .ant-steps-item-custom .ant-steps-item-icon > .ant-steps-icon
+        font-size 32px
+    .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon,
+    .ant-steps-item-wait .ant-steps-item-icon > .ant-steps-icon
+        color #d9d9d9
+    .ant-steps-item-custom.ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon
+        color #666
+        
+    .ant-steps-item-finish > .ant-steps-item-content > .ant-steps-item-title::after,
+    .ant-steps-item-process > .ant-steps-item-content > .ant-steps-item-title::after
+        background-color #d9d9d9
+        height 2px
+    .ant-steps-horizontal.ant-steps-label-horizontal .ant-steps-item-icon
+        margin-right 0
+        margin 0 5px
+
+.ant-steps:not(.ant-steps-vertical) .ant-steps-item-custom .ant-steps-item-icon
+    padding 0 1px
+
+.ant-alert-warning
+    background-color transparent
+    border-radius 0
+    border-color #888888
+    text-transform uppercase
+    font-size 12px
+    text-align center
+    .ant-alert-message
+        color#888888
+        a
+            color #444444
+
+//
+.ant-modal.updates
+    .ant-modal-body
+        padding: 12px 24px
+
+// single
+.single-card
+    max-width 900px
+    margin 0 16px
+.single-header
+    position relative
+    img
+        width 100%
+        height auto
+        &.nofan
+            height 250px
+            object-fit cover
+            object-position top
+.title-overlay
+    font-size: 42px
+    line-height 1
+    color #ffffff
+    padding 0 0 10px 15px
+    margin 0
+    text-transform uppercase
+    position absolute
+    bottom 0
+    text-shadow 0px 2px 20px rgba(0,0,0,0.25)
+.overview
+    white-space pre-wrap
+    margin 15px 0
+    display block
+
+.backbttn
+    width 100%
+    margin 0 16px 16px 16px
+    display flex
+    .ant-btn.disabled,
+    .ant-btn[disabled]
+        color #bdbdbd
+        cursor default
+    .ant-btn:hover,
+    .ant-btn:focus,
+    .ant-btn:active,
+    .ant-btn.active
+        color #8e8e8e
+        border-color #bdbdbd
+    .ant-btn
+        border-radius 3px
+        &:after
+            display none
+        &:hover
+            color #666
+            border-color #666
+        &.disabled,
+        &[disabled]
+            color #bdbdbd
+            border-color #d8d8d8
+            cursor default
+.ant-menu-item-selected > a, .ant-menu-item-selected > a:hover, .ant-menu-item > a:hover
+    color #8e8e8e
+
+.ant-back-top
+    bottom 11px
+    right 11px
+    width 44px
+    height 44px
+    background #e2e2e2
+    color #ffffff
+    box-shadow rgba(0,0,0,0.07) 0px 0px 12px
+    opacity 0.92
+    i 
+        font-size 46px
+        margin -1px 0 0 -1px
+
+// tools
+.page-center
+    position fixed
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+
+// genres
+.ant-layout .ant-layout-content
+    .card.award, .card.children, .card.syndication, .card.hallmark, .card.espn, .card.disney
+        display none
+
+// media query
+@media (max-width: 500px)
+    .ant-layout
+        .ant-layout-content
+            .card
+                width 300px
+                .ant-card
+                    .ant-card-cover
+                        height 451px
+                    .ant-card-cover img
+                        height 426px
+                    .ant-tag.premiere
+                        top 426px
+    .ant-modal
+        width 300px !important
+        min-width 248px
+    .ant-steps-horizontal.ant-steps-label-horizontal
+        display flex
+    .ant-steps-horizontal.ant-steps-label-horizontal > .ant-steps-item:not(:last-child) > .ant-steps-item-container > .ant-steps-item-tail,
+    .ant-steps-horizontal.ant-steps-label-horizontal .ant-steps-item-content
+        display none
+    .ant-steps-horizontal.ant-steps-label-horizontal .ant-steps-item-icon
+        margin-right 0
